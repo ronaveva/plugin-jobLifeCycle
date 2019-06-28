@@ -8,11 +8,8 @@
 	<name>itsm-plugin-test</name>
 
 	<properties>
-		<rundeck-core.version>3.1.0-JOB-LIFE-CYCLE-SNAPSHOT</rundeck-core.version>
-		<unirest.version>1.4.9</unirest.version>
+		<rundeck-core.version>3.1.0-SNAPSHOT</rundeck-core.version>
 		<rundeck-plugin.version>1.2</rundeck-plugin.version>
-		<powermock.version>1.7.1</powermock.version>
-		<http-client.version>4.3.6</http-client.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -24,25 +21,8 @@
 			<version>${rundeck-core.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${http-client.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-junit4</artifactId>
-			<version>${powermock.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-mockito</artifactId>
-			<version>${powermock.version}</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
-<build>
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -69,18 +49,19 @@
 					<outputDirectory>${project.build.directory}</outputDirectory>
 					<archive>
 						<manifest>
-		                    <classpathPrefix>lib/</classpathPrefix>
-	               		</manifest>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
 						<manifestEntries>
 							<Rundeck-Plugin-Classnames>test.plugin.jobs.JobLifeCycleTestPlugin</Rundeck-Plugin-Classnames>
 							<Rundeck-Plugin-File-Version>${project.version}</Rundeck-Plugin-File-Version>
 							<Rundeck-Plugin-Version>${rundeck-plugin.version}</Rundeck-Plugin-Version>
 							<Rundeck-Plugin-Archive>true</Rundeck-Plugin-Archive>
+<!-- 							Here you must add the external jar list -->
 							<Rundeck-Plugin-libs></Rundeck-Plugin-libs>
 						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
-</build>
+	</build>
 </project>
