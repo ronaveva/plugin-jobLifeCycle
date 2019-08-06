@@ -1,14 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>rundeck.plugin</groupId>
-	<artifactId>plugin-jobLifeCycle</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>itsm-plugin-test</name>
-
-	<properties>
-		<rundeck-core.version>3.1.0-SNAPSHOT</rundeck-core.version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rundeck.plugin</groupId>
+  <artifactId>job-plugin-example</artifactId>
+  <version>1.0</version>
+  <name>job-plugin-example</name>
+  
+  <properties>
+		<rundeck-core.version>3.1.1-SNAPSHOT</rundeck-core.version>
 		<rundeck-plugin.version>1.2</rundeck-plugin.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -52,11 +50,11 @@
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
 						<manifestEntries>
-							<Rundeck-Plugin-Classnames>test.plugin.jobs.JobLifeCycleTestPlugin</Rundeck-Plugin-Classnames>
+							<Rundeck-Plugin-Classnames>rundeck.job.plugin.example.JobPluginExample</Rundeck-Plugin-Classnames>
 							<Rundeck-Plugin-File-Version>${project.version}</Rundeck-Plugin-File-Version>
 							<Rundeck-Plugin-Version>${rundeck-plugin.version}</Rundeck-Plugin-Version>
 							<Rundeck-Plugin-Archive>true</Rundeck-Plugin-Archive>
-<!-- 							Here you must add the external jar list -->
+							<!-- Here you must add the external jar list -->
 							<Rundeck-Plugin-libs></Rundeck-Plugin-libs>
 						</manifestEntries>
 					</archive>
