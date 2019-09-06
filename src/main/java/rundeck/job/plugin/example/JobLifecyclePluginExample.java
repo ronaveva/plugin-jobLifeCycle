@@ -5,21 +5,21 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import com.dtolabs.rundeck.core.execution.JobPluginException;
 import com.dtolabs.rundeck.core.jobs.JobEventStatus;
 import com.dtolabs.rundeck.core.jobs.JobOption;
 import com.dtolabs.rundeck.core.jobs.JobPersistEvent;
 import com.dtolabs.rundeck.core.jobs.JobPreExecutionEvent;
+import com.dtolabs.rundeck.core.plugins.JobLifecyclePluginException;
 import com.dtolabs.rundeck.core.plugins.Plugin;
 import com.dtolabs.rundeck.plugins.ServiceNameConstants;
 import com.dtolabs.rundeck.plugins.descriptions.PluginDescription;
 import com.dtolabs.rundeck.plugins.jobs.JobOptionImpl;
-import com.dtolabs.rundeck.plugins.jobs.JobPlugin;
+import com.dtolabs.rundeck.plugins.project.JobLifecyclePlugin;
 
 
-@Plugin(service=ServiceNameConstants.JobPlugin, name="JobPluginExample")
+@Plugin(service=ServiceNameConstants.JobLifecyclePlugin, name="JobPluginExample")
 @PluginDescription(title="JobPluginExample title", description="JobPluginExample description")
-public class JobPluginExample implements JobPlugin{
+public class JobLifecyclePluginExample implements JobLifecyclePlugin{
 
 	private static final String EXAMPLE_OPTION_NAME = "exampleOptionName";
 	
@@ -77,7 +77,7 @@ public class JobPluginExample implements JobPlugin{
 	//It triggers before the job execution
 	//It can prevent the job for being executed and it can also change the options values
 	@Override
-	public JobEventStatus beforeJobExecution(JobPreExecutionEvent event) throws JobPluginException {
+	public JobEventStatus beforeJobExecution(JobPreExecutionEvent event) throws JobLifecyclePluginException {
 		JobEventStatusImpl result = new JobEventStatusImpl();
 		//it indicates that new options values should be used
 		result.setUseNewValues(true);
@@ -105,7 +105,7 @@ public class JobPluginExample implements JobPlugin{
 	//It can add or remove job options
 	//In this example, we will always add the "exampleOptionName" if it does not exist in the job
 	@Override
-	public JobEventStatus beforeSaveJob(JobPersistEvent event) throws JobPluginException {
+	public JobEventStatus beforeSaveJob(JobPersistEvent event) throws JobLifecyclePluginException {
 		
 		//It returns the node filter for the job
 		//event.getNodeFilter(); 

@@ -50,7 +50,7 @@
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
 						<manifestEntries>
-							<Rundeck-Plugin-Classnames>rundeck.job.plugin.example.JobPluginExample</Rundeck-Plugin-Classnames>
+							<Rundeck-Plugin-Classnames>rundeck.job.plugin.example.JobLifecyclePluginExample</Rundeck-Plugin-Classnames>
 							<Rundeck-Plugin-File-Version>${project.version}</Rundeck-Plugin-File-Version>
 							<Rundeck-Plugin-Version>${rundeck-plugin.version}</Rundeck-Plugin-Version>
 							<Rundeck-Plugin-Archive>true</Rundeck-Plugin-Archive>
