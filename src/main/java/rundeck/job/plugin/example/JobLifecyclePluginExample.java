@@ -58,16 +58,6 @@ public class JobLifecyclePluginExample implements JobLifecyclePlugin{
 		}
 
 		@Override
-		public String getDescription() {
-			return this.description;
-		}
-
-		@Override
-		public boolean useNewValues() {
-			return this.useNewValues;
-		}
-
-		@Override
 		public Map getOptionsValues() {
 			return this.optionValues;
 		}
