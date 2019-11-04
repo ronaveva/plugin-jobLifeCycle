@@ -4,7 +4,7 @@
   <artifactId>job-plugin-example</artifactId>
   <version>1.0</version>
   <name>job-plugin-example</name>
-  
+
   <properties>
 		<rundeck-core.version>3.2.0-SNAPSHOT</rundeck-core.version>
 		<rundeck-plugin.version>1.2</rundeck-plugin.version>
